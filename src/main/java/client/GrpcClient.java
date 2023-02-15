@@ -15,16 +15,17 @@ public class GrpcClient {
         MatrixServiceGrpc.MatrixServiceBlockingStub stub 
           = MatrixServiceGrpc.newBlockingStub(channel);
 
-	int A[][] = { {1, 2, 3, 4}, 
-                {5, 6, 7, 8}, 
-                {9, 10, 11, 12},
-                {13, 14, 15, 16}}; 
+	int A[][] = { {1, 2, 3, 4},
+			{5, 6, 7, 8},
+			{9, 10, 11, 12},
+			{13, 14, 15, 16}};
 
-	int B[][] = { {1, 2, 3, 4}, 
-          {5, 6, 7, 8}, 
-          {9, 10, 11, 12},
-          {13, 14, 15, 16}};
-	MatrixReply A3M1=stub.multiplyBlock(MatrixRequest.newBuilder()//First Result Block Calculation
+	int B[][] = { {2, 3, 4, 5},
+			{6, 7, 8, 9},
+			{10, 11, 12, 13},
+			{14, 15, 16, 17}};
+	
+		MatrixReply A3M1=stub.multiplyBlock(MatrixRequest.newBuilder()//First Result Block Calculation
           .setA00(A[0][0])
           .setA01(A[0][1])
           .setA10(A[1][0])
